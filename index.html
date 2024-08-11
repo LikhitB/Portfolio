@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio Website - Likhit Battula</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style type="text/tailwindcss">
+        @tailwind base;
+        @tailwind components;
+        @tailwind utilities;
+        
+        body{
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            @apply bg-black;
+            cursor:pointer
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            /* font-family: "Be Vietnam Pro", sans-serif; */
+            scroll-behavior: smooth;
+        }
+        .fix{
+            box-shadow: rgba(255, 124, 2, 0.3) 0px 30px 20px -12px inset, rgba(242, 117, 0, 0.3) 0px 18px 20px -18px inset;
+            /* box-shadow: rgba(255, 255, 255, 0.3) 0px 30px 80px -12px inset, rgba(255, 238, 238, 0.3) 0px 18px 86px -18px inset; */
+            
+        }
+        .nav a{
+            position: relative;
+            @apply pb-2
+        }
+        .animate1::before {
+            content: "";
+            position: absolute;
+            bottom:0;
+            animation: slide 0.3s linear forwards;
+            z-index: -1;
+            @apply rounded-lg
+        }
+        
+        .animate2::after {
+            content: "";
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            animation: slides 0.3s linear forwards;
+            z-index: -1;
+            @apply rounded-sm
+        
+        }
+        
+        @keyframes slide {
+            from {
+                @apply border-b-2 border-orange-400;
+        
+                width: 0%
+            }
+        
+            to {
+                @apply border-b-2 border-orange-400;
+        
+        
+                width: 100%;
+            }
+        }
+        
+        @keyframes slides {
+            from {
+                @apply border-b-2 border-orange-700;
+        
+                width: 100%
+            }
+        
+            to {
+                @apply border-b-2 border-orange-700;
+        
+                width: 0%;
+            }
+        }
+        .bl{
+            @apply font-extrabold
+        }
+        .orF{
+            font-family: "Poetsen One", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+        .clip {
+            @apply border-4 border-orange-500;
+            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+        }
+        .skill img {
+            width: 100px;
+        }
+        .skillimg img {
+            @apply sm:w-[28%] md:w-[20%] w-[60%];
+        }
+        .hideclass {
+            transition: all ease-out 0.2s;
+            transform: scaleX(0);
+            transform-origin: right;
+        }
+        .showclass {
+            transition: all ease-out 0.2s;
+            transform: scaleX(1);
+        }
+        .rotate {
+            transition: all ease 0.2s;
+            transform: rotate(-180deg);
+        }
+        .hide {
+            display: none;
+        }
+        
+        .loader h1 {
+            font-weight: bolder;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        
+        .nav-items div {
+            font-size: 20px;
+            font-weight: 500;
+            cursor: pointer;
+            @apply bg-orange-500
+        }
+        .nav-items div a {
+            color: black;
+            transition: all 5s ease;
+        }
+        .nav-items div a:hover {
+            border-bottom: 4px solid rgb(255, 167, 2);
+            border-radius: 2px;
+            transition: border 0.2s;
+        }
+        
+        .nav-items div:hover {
+            transition: 0.8s;
+            font-weight: bold;
+        }
+        
+        .hero-section {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        
+            gap: 5rem;
+            margin: 4rem auto;
+            padding: 0 1rem;
+            padding-bottom: 8rem;
+        }
+        
+        .faded-text {
+            position: absolute;
+            user-select: none;
+            font-size: 7em;
+            color: rgb(231, 231, 231);
+        
+            bottom: -16%;
+            left: -5%;
+            font-weight: bold;
+            transition: all 3s;
+        }
+        
+        .hero-section-left {
+            /* width:100%; */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 2rem;
+        }
+        
+        .hero-section-heading {
+            font-size: 35px;
+            color: #343d68;
+            font-weight: 500;
+        }
+        
+        .role {
+            font-weight: 800;
+            /* border:2px solid red; */
+        }
+        .text-align {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        .active {
+            display: flex;
+        }
+        .not_active {
+            display: none;
+        }
+        .over:before {
+            content: "";
+            bottom: 0px;
+            /* box-shadow: 0 0 10px rgba(0, 0, 0, 1); */
+            position: absolute;
+            width: 100%;
+        }
+        .over:after {
+            content: "";
+            top: 0px;
+            /* box-shadow: 0 0 10px rgba(165, 161, 161, 0.5); */
+            position: absolute;
+            width: 100%;
+        
+            height: 2%;
+        }
+        .roler {
+            list-style: none;
+        }
+        .hero-section-sub-heading {
+            font-size: 45px;
+            line-height: 45px;
+        }
+        
+        .btn-pink {
+            box-shadow: 5px 5px 7px 0px #0000003f;
+            cursor: pointer;
+            transition: all 0.5s;
+            position: relative;
+            z-index: 1;
+            @apply border rounded-lg;
+        }
+        .btn-pink::before {
+            content: "";
+            position: absolute;
+            background-color: #fff;
+            top: 0px;
+            left: 0;
+            right: 0;
+            bottom: 0px;
+            z-index: -1;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: all 0.8s;
+            @apply border rounded-lg;
+        }
+        .btn-pink:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .hero-section-right {
+            position: relative;
+        }
+        
+        .absolute {
+            position: absolute;
+        }
+        
+        .user-image {
+            animation: scaleImage 4s linear infinite;
+        }
+        @keyframes scaleImage {
+            0% {
+                transform: scale(1);
+            }
+        
+            50% {
+                transform: scale(1.01);
+                box-shadow: 10px 5px 600px rgb(159, 88, 0);
+            }
+        
+            100% {
+                transform: scale(1);
+            }
+        }
+        
+        .project-card {
+            background-image: url(./images/projects/Project1.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+            position: relative;
+            box-shadow: 1px 0px 3px #1f1f1f;
+            overflow: hidden;
+        }
+        
+        .project-card::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #1f1f1f9a;
+            z-index: 1;
+        }
+        
+        .project-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(
+                45deg,
+                #343d68,
+                #343d68be,
+                #343d687c
+            );
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: all 0.4s;
+            z-index: 1;
+        }
+        
+        .project-card:hover::before {
+            transform: scaleX(1);
+        }
+        .form input,textarea {
+            @apply w-full rounded-lg bg-transparent border-2 border-orange-900 outline-none outline-offset-4 p-2;
+            resize: none;
+        }
+        .form input::placeholder{
+            @apply text-white
+        }
+        .form textarea::placeholder{
+            @apply text-white
+        }
+
+    </style>
+</head>
+
+<body>
+    <!-- percentage  -->
+    <div class="absolute flex justify-center items-center h-[100%] z-[1000] loader w-[100%] bg-black text-orange-600">
+        <h1 class="value text-7xl"></h1>
+    </div>
+    <!-- cursor  -->
+    <div
+        class="cursor w-1 h-1 rounded-full fixed z-[10] not_active text-orange-400 hidden lg:flex justify-center items-center self-center font-extrabold">
+    </div>
+    <div class="w-[100%] overflow-hidden flex flex-col gap-40 wrap" id="home">
+        <!-- navbarstart  -->
+        <div class="w-[100%] flex flex-col justify-center items-center mt-6 gap-10">
+            <div
+                class="flex justify-between items-center w-[90vw] md:w-[70vw]  fixed top-7 rounded-xl fix z-[20] px-8 py-2 fix">
+                <!-- logo  -->
+                <a href="#home">
+                    <div class="p-1 sm:p-2 clip">
+                        <div class="-rotate-45">
+                            <span class="text-orange-400 bl">BL</span>
+                        </div>
+                    </div>
+                </a>
+                <!-- left part  -->
+                <div class="flex gap-8 text-2xl relative z-[11] nav">
+                    <div class="md:flex hidden">
+                        <a href="#projects" class="text-orange-400 home font-extrabold">Projects</a>
+                    </div>
+                    <div class="md:flex hidden">
+                        <a href="#skills" class="text-orange-400 about font-extrabold">Skills</a>
+                    </div>
+                    <div class="md:flex hidden">
+                        <a href="#contactme" class="text-orange-400 contact font-extrabold">Contact Me</a>
+                    </div>
+                    <div class="md:hidden relative">
+                        <i class="fa-solid fa-bars text-orange-600" id="menu"></i>
+                    </div>
+                    <div class="absolute border border-orange-600  fix justify-around flex right-0 text-lg p-3 hideclass  rounded-xl gap-4 md:hidden flex-row-reverse w-[80vw] sm:w-[40vw] z-[1003]"
+                        id="menu1">
+                        <div>
+                            <span id="cross"><i class="fa-solid fa-xmark text-orange-600 text-2xl"></i></span>
+                        </div>
+                        <div class="text-orange-600">
+                            <div class="">
+                                <a href="#projects" class="home">Projects</a>
+                            </div>
+                            <div class="">
+                                <a href="#skills" class="about">Skills</a>
+                            </div>
+                            <div class="">
+                                <a href="#contactme" class="contact">ContactMe</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- navbarends  -->
+            <!-- name-section -->
+            <div class="flex flex-col lg:flex-row gap-10 items-center justify-between w-[100vw] sm:w-[80vw] mt-44 ">
+                <!-- leftpart  -->
+
+                <div class="flex flex-col gap-3 sm:gap-7 w-[80%] z-[10] nav_bar">
+                    <div class="text-xl sm:text-2xl font-extrabold text-orange-600">
+                        <span>Hi!</span>
+                        <span>I am Likhit Battula, A</span>
+                    </div>
+
+                    <div class="text-4xl role overflow-hidden border-none h-[65px] md:h-[50px] relative z-[10]">
+                        <ul
+                            class="flex flex-col md:gap-[20px] gap-[30px] text-orange-600 text-2xl sm:text-3xl md:text-4xl">
+                            <li class="roler r1">Frontend Developer</li>
+                            <li class="roler r2">
+                                Problem Solving enthusiast
+                            </li>
+                            <li class="roler r3">Quick Learner</li>
+                        </ul>
+                    </div>
+
+                    <div class="text-sm sm:text-xl w-[100%] z-10 text-gray-900">
+                        <h1 class="text-align" id="hider">
+                            I am currently looking for internships on React
+                            based or any frontend based.I can create the
+                            basic to intermediate level websites. I am also
+                            adaptive learner and the one who likes the
+                            tecnologies.I have also did the basic level of
+                            problem solving on core concepts like Recursion,
+                            Arrays, Linked Lists,low level stack and graphs
+                            problems.
+                            <button class="text-orange-600 font-extrabold text-base" id="readl">
+                                Read Less
+                            </button>
+                        </h1>
+                        <button class="text-orange-600 font-extrabold text-base" id="readm">
+                            Read More
+                        </button>
+                    </div>
+
+                    <a href="https://www.linkedin.com/in/battula-likhit/"
+                        class="flex self-center items-center justify-center w-[100%] md:w-[50%] group z-[11]">
+                        <div class="btn-pink bg-orange-600 w-[100%] flex self-center items-center justify-center font-bold p-2 text-orange-200 hover:text-orange-600"
+                            id="btn">
+                            <span class="text-sm sm:text-xl">Profile</span>
+                        </div>
+                    </a>
+                </div>
+                <!-- rightpart  -->
+
+                <div class="user-image rounded-3xl sm:py-15 p-10 flex justify-center items-center w-[70%] sm:w-[50%]">
+                    <img src="./images/userAsset/Pelli.jpeg" alt="" class="rounded-3xl w-[100%] sm:w-[80%]" />
+                </div>
+            </div>
+        </div>
+        <!-- end of name section  -->
+        <!-- project section -->
+        <div class="flex flex-col justify-center items-center gap-10 border-black mt-14" id="projects">
+            <h2 class="font-bold flex text-5xl sm:text-7xl text-orange-700 justify-center">
+                Projects
+            </h2>
+            <div class="w-[90vw] sm:w-[80vw] flex flex-col justify-center items-center gap-20 overflow-hidden">
+                <!-- p1  -->
+                <div class="project-card h-[350px] sm:h-[500px] w-[100%] md:w-[90%] relative group bg-center rounded-3xl pro_ani"
+                    id="p1" style="background-image: url(./images/projects/p1.png)">
+                    <div
+                        class="absolute text-5xl xl:text-9xl md:text-8xl sm:text-6xl text-orange-600 z-10 right-[5%] top-[10%] opacity-0 group-hover:opacity-100 duration-700 transition-opacity">
+                        01
+                    </div>
+                    <div
+                        class="w-[80%] sm:w-[60%] absolute text-orange-400 left-[10%] top-[40%] opacity-0 transition-opacity duration-700 group-hover:opacity-100 z-10 flex flex-col gap-2 text-2xl xl:text-4xl md:text-4xl sm:text-3xl font-semibold">
+                        <div class="flex gap-[1%] w-fit">
+                            <img class="sm:w-[5%] w-[10%]" src="./images/stack/HTML.png" alt="" />
+                            <img class="sm:w-[5%] w-[10%]" src="./images/stack/CSS.png" alt="" />
+                            <img class="sm:w-[5%] w-[10%]" src="./images/stack/Javascript.svg" alt="" />
+                            <img class="sm:w-[5%] w-[10%]" src="./images/stack/Tailwind.png" alt="" />
+                        </div>
+                        <div class="flex flex-col">
+                            <h1>RazorPay UI Clone</h1>
+
+                            <span class="text-orange-600 text-sm sm:text-base">A simple first section UI clone of
+                                RazorPay
+                                Site
+                            </span>
+                        </div>
+                        <div class="btn-grp flex">
+                            <a href="https://github.com/LikhitB/RAZOR_CLONE">
+                                <i title="GitHubLink" class="fa-brands fa-github icon"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- p2  -->
+                <div class="project-card h-[350px] sm:h-[500px] w-[100%] md:w-[90%] relative group bg-center rounded-3xl pro_ani1"
+                    id="p2" style="background-image: url(./images/projects/p2.png)">
+                    <div
+                        class="absolute text-5xl xl:text-9xl md:text-8xl sm:text-6xl text-orange-600 z-10 left-[10%] top-[10%] opacity-0 group-hover:opacity-100 duration-700 transition-opacity">
+                        02
+                    </div>
+                    <div
+                        class="w-[80%] sm:w-[50%] absolute text-orange-400 right-[5%] top-[40%] opacity-0 transition-opacity duration-700 group-hover:opacity-100 z-10 flex flex-col gap-2 text-2xl xl:text-4xl md:text-4xl sm:text-3xl font-semibold">
+                        <div class="flex gap-[1%] w-fit">
+                            <img class="sm:w-[5%] w-[10%]" src="./images/stack/HTML.png" alt="" />
+                            <img class="sm:w-[5%] w-[10%]" src="./images/stack/CSS.png" alt="" />
+                            <img class="sm:w-[5%] w-[10%]" src="./images/stack/Javascript.svg" alt="" />
+                            <img class="sm:w-[5%] w-[10%]" src="./images/stack/GSAP.svg" alt="" />
+                            <img class="sm:w-[5%] w-[10%]" src="./images/stack/Tailwind.png" alt="" />
+                        </div>
+                        <div class="flex flex-col">
+                            <h2 class="flex flex-col">Weather App</h2>
+                            <p class="text-orange-600 text-sm sm:text-base">
+                                Animated platform for getting dynamic
+                                weather details
+                            </p>
+                        </div>
+                        <div class="btn-group">
+                            <a href="https://github.com/LikhitB/WeatherApp">
+                                <i title="GitHubLink" class="fa-brands fa-github icon"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- p3  -->
+                <div class="project-card h-[350px] sm:h-[500px] w-[100%] md:w-[90%] relative group bg-center rounded-3xl pro_ani2"
+                    id="p3" style="background-image: url(./images/projects/p3.png)">
+                    <div
+                        class="absolute text-5xl xl:text-9xl md:text-8xl sm:text-6xl text-orange-600 z-10 right-[5%] top-[10%] opacity-0 group-hover:opacity-100 duration-700 transition-opacity">
+                        03
+                    </div>
+                    <div
+                        class="w-[80%] sm:w-[60%] absolute text-orange-400 left-[10%] top-[40%] opacity-0 transition-opacity duration-700 group-hover:opacity-100 z-10 flex flex-col gap-2 text-2xl xl:text-4xl md:text-4xl sm:text-3xl font-semibold">
+                        <div class="flex gap-[1%] w-fit">
+                            <img class="sm:w-[5%] w-[10%]" src="./images/stack/HTML.png" alt="" />
+                            <img class="sm:w-[5%] w-[10%]" src="./images/stack/CSS.png" alt="" />
+                            <img class="sm:w-[5%] w-[10%]" src="./images/stack/Javascript.svg" alt="" />
+                            <!-- <img class="sm:w-[5%] w-[10%]" src="./images/stack/NextJsCircle.png" alt="" /> -->
+                            <img class="sm:w-[5%] w-[10%]" src="./images/stack/Tailwind.png" alt="" />
+                            <!-- <img class="sm:w-[5%] w-[10%]" src="./images/stack/Vercel.svg" alt="" /> -->
+                        </div>
+                        <div class="flex flex-col">
+                            <h2 class="flex flex-col">
+                                Password Generator
+                            </h2>
+                            <p class="text-orange-600 text-sm sm:text-base">
+                                A Simple Machine type site for genrating
+                                strongest passwords!
+                            </p>
+                        </div>
+
+                        <div class="btn-group">
+                            <a href="https://github.com/LikhitB/Small_Password_Genrator">
+                                <i title="GitHubLink" class="fa-brands fa-github icon"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- p4  -->
+                <div class="project-card h-[420px] sm:h-[500px] w-[100%] md:w-[90%] relative group bg-center rounded-3xl pro_ani3"
+                    id="p4" style="background-image: url(./images/projects/p4.png)">
+                    <div
+                        class="absolute text-5xl xl:text-9xl md:text-8xl sm:text-6xl text-orange-600 z-10 left-[10%] top-[10%] opacity-0 group-hover:opacity-100 duration-700 transition-opacity">
+                        04
+                    </div>
+                    <div
+                        class="w-[80%] sm:w-[50%] absolute text-orange-400 right-[5%] top-[30%] sm:top-[40%] opacity-0 transition-opacity duration-700 group-hover:opacity-100 z-10 flex flex-col gap-2 text-2xl xl:text-4xl md:text-4xl sm:text-3xl font-semibold">
+                        <div class="flex gap-[1%] w-fit">
+                            <img class="sm:w-[5%] w-[10%]" src="./images/stack/Tailwind.png" alt="" />
+                            <img class="sm:w-[5%] w-[10%]" src="./images/stack/React.png" alt="" />
+                        </div>
+                        <div class="flex flex-col">
+                            <h2 class="flex flex-col">
+                                React Sample Layout for Edtech Sites
+                            </h2>
+                            <p class="text-orange-600 text-sm sm:text-base">
+                                I created a simple react sample UI for
+                                future edtech project purpose(Reference:Love
+                                Babbar)
+                            </p>
+                        </div>
+
+                        <div class="btn-group">
+                            <a href="https://github.com/LikhitB/Sample_UI_Edtech_project">
+                                <i title="GitHubLink" class="fa-brands fa-github icon"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- skills  -->
+        <div class="w-[100vw] flex justify-center items-center overflow-x-hidden z-[20]" id="skills">
+            <div class="skill flex flex-col gap-10 w-[90vw] justify-center items-center">
+                <div
+                    class="flex flex-col justify-center items-center relative rounded-3xl p-10 text-orange-500 w-[90vw] md:w-[80 z-[20]">
+                    <span class="text-5xl sm:text-8xl">Skills</span>
+                    <h1 class="absolute text-2xl md:text-6xl" id="skillval">Hover/Click Icons check%</h1>
+                </div>
+                <div
+                    class="grid grid-cols-3 overflow-hidden w-[90vw] sm:w-[70vw] justify-items-center items-center gap-20 h-auto skillimg">
+                    <img src="assets/c-.png" alt="" id="c" />
+                    <img src="assets/python.png" alt="" id="py" />
+                    <img src="assets/java.png" alt="" id="java" />
+                    <img src="assets/1174949_js_react js_logo_react_react native_icon.png" alt="" id="react" />
+                    <img src="assets/html-5.png" alt="" id="html" />
+                    <img src="assets/Css.png" alt="" id="css" />
+                    <img src="assets/Tail-removebg-preview.png" alt="" id="tail" />
+                    <img src="assets/js.png" alt="" id="js" />
+                    <img src="assets/Typescript.svg" alt="" id="ts" />
+                    <img src="assets/Git.svg" alt="" id="git" />
+                    <img src="assets/Github.svg" alt="" id="github" class="bg-white rounded-full p-1" />
+                    <img src="assets/Gsap.png" alt="" id="gsap" />
+                </div>
+            </div>
+        </div>
+
+        <!-- contact me  -->
+        <div class="flex flex-col md:flex-row items-center justify-around w-[90vw] sm:w-[85vw] self-center mb-20 gap-10"
+            id="contactme">
+            <div class="w-[90vw] md:w-[60%] flex flex-col justify-center items-center gap-10 self-center">
+                <h1
+                    class="text-2xl sm:text-3xl lg:text-4xl text-orange-600 font-extrabold flex flex-col sm:flex-row justify-center items-center w-[100%]">
+                    Contact!, Get In Touch <span class="text-4xl">😊</span>
+                </h1>
+                <form action="https://sheetdb.io/api/v1/zebef1epeex9l" method="POST"
+                    class="flex flex-col gap-5 justify-center items-center w-[90%] sm:w-[70%] text-orange-600 form"
+                    id="sheetdb">
+                    <input type="text" placeholder="Name" name="data[name]" id="name" />
+                    <input type="email" placeholder="Email" name="data[email]" id="email" />
+                    <input type="text" placeholder="Contact" name="data[contact]" id="contacts" />
+                    <textarea type="text" id="suggest" placeholder="Suggest,Comment,Message..." class="h-44 p-2"
+                        name="data[suggest]"></textarea>
+                    <a
+                        class="btn-pink group rounded-md bg-orange-600 w-[100%] md:w-[50%] flex justify-center items-center p-2 text-black">
+                        <button type="submit" class="text-base sm:text-xl">
+                            Send Message
+                        </button>
+                    </a>
+                </form>
+            </div>
+            <div class="group flex flex-col gap-10 justify-center items-center w-[100%] md:w-[40%] z-[11]"
+                id="last_nav">
+                <a href="assets/Likhit's Resume.pdf"
+                    class="btn-pink border border-white bg-orange-600 hover:scale-110 transition-all duration-200 w-[80%] flex justify-center items-center p-3 rounded-lg"
+                    download>
+                    <button class="text-xl sm:text-2xl">Resume</button>
+                </a>
+                <!-- <a href="#home"
+                    class="border-2 border-orange-800 hover:scale-110 transition-all duration-200 w-[80%] flex justify-center items-center p-3 rounded-lg">
+                    <button class="text-xl sm:text-2xl">Home</button>
+                </a>
+                <a href="#projects"
+                    class="border-2 border-orange-800 hover:scale-110 transition-all duration-200 w-[80%] flex justify-center items-center p-3 rounded-lg">
+                    <button class="text-xl sm:text-2xl">Project</button>
+                </a>
+                <a href="#skills"
+                    class="border-2 border-orange-800 hover:scale-100 transition-all duration-200 w-[80%] flex justify-center items-center p-3 rounded-lg">
+                    <button class="text-xl sm:text-2xl">Skills</button>
+                </a> -->
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+        integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- SCROLL-TRIGGER  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"
+        integrity="sha512-Ic9xkERjyZ1xgJ5svx3y0u3xrvfT/uPkV99LBwe68xjy/mGtO+4eURHZBW2xW4SZbFrF1Tf090XqB+EVgXnVjw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
