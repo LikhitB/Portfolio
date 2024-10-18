@@ -7,16 +7,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio Website - Likhit Battula</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/a34245c4a2.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
 
     <style type="text/tailwindcss">
         @tailwind base;
         @tailwind components;
         @tailwind utilities;
+
         
         body{
-            font-family: Georgia, 'Times New Roman', Times, serif;
-            @apply bg-black;
-            cursor:pointer
+            font-family: "Poppins", sans-serif;
+            font-weight: 400;         
+            cursor:pointer;
+            background: linear-gradient(to bottom, #EEEEEE, black);
+
+
         }
         * {
             margin: 0;
@@ -90,7 +100,7 @@
             font-style: normal;
         }
         .clip {
-            @apply border-4 border-orange-500;
+            @apply border-4 border-orange-400;
             clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
         }
         .skill img {
@@ -257,7 +267,7 @@
             position: absolute;
         }
         
-        .user-image {
+        .user-image img{
             animation: scaleImage 4s linear infinite;
         }
         @keyframes scaleImage {
@@ -322,10 +332,11 @@
             resize: none;
         }
         .form input::placeholder{
-            @apply text-white
+            @apply text-orange-600 font-bold
+            
         }
         .form textarea::placeholder{
-            @apply text-white
+            @apply  text-orange-600 font-bold
         }
 
     </style>
@@ -338,7 +349,7 @@
     </div>
     <!-- cursor  -->
     <div
-        class="cursor w-1 h-1 rounded-full fixed z-[10] not_active text-orange-400 hidden lg:flex justify-center items-center self-center font-extrabold">
+        class="cursor w-1 h-1 rounded-full fixed z-[10] not_active text-orange-600 hidden lg:flex justify-center items-center self-center font-extrabold">
     </div>
     <div class="w-[100%] overflow-hidden flex flex-col gap-40 wrap" id="home">
         <!-- navbarstart  -->
@@ -346,23 +357,23 @@
             <div
                 class="flex justify-between items-center w-[90vw] md:w-[70vw]  fixed top-7 rounded-xl fix z-[20] px-8 py-2 fix">
                 <!-- logo  -->
-                <a href="#home">
-                    <div class="p-1 sm:p-2 clip">
+                <a href="#home" class="text-orange-400">
+                    <div class="p-1 sm:p-2 clip ">
                         <div class="-rotate-45">
-                            <span class="text-orange-400 bl">BL</span>
+                            <span class="text-orange-900 bl">BL</span>
                         </div>
                     </div>
                 </a>
                 <!-- left part  -->
                 <div class="flex gap-8 text-2xl relative z-[11] nav">
                     <div class="md:flex hidden">
-                        <a href="#projects" class="text-orange-400 home font-extrabold">Projects</a>
+                        <a href="#projects" class="text-orange-500 home font-extrabold">Projects</a>
                     </div>
                     <div class="md:flex hidden">
-                        <a href="#skills" class="text-orange-400 about font-extrabold">Skills</a>
+                        <a href="#skills" class="text-orange-500 about font-extrabold">Skills</a>
                     </div>
                     <div class="md:flex hidden">
-                        <a href="#contactme" class="text-orange-400 contact font-extrabold">Contact Me</a>
+                        <a href="#contactme" class="text-orange-500 contact font-extrabold">Contact Me</a>
                     </div>
                     <div class="md:hidden relative">
                         <i class="fa-solid fa-bars text-orange-600" id="menu"></i>
@@ -372,15 +383,15 @@
                         <div>
                             <span id="cross"><i class="fa-solid fa-xmark text-orange-600 text-2xl"></i></span>
                         </div>
-                        <div class="text-orange-600">
+                        <div class="">
                             <div class="">
-                                <a href="#projects" class="home">Projects</a>
+                                <a href="#projects" class="home text-orange-900">Projects</a>
                             </div>
                             <div class="">
-                                <a href="#skills" class="about">Skills</a>
+                                <a href="#skills" class="about text-orange-900">Skills</a>
                             </div>
                             <div class="">
-                                <a href="#contactme" class="contact">ContactMe</a>
+                                <a href="#contactme" class="contact text-orange-900">ContactMe</a>
                             </div>
                         </div>
                     </div>
@@ -409,7 +420,7 @@
                     </div>
 
                     <div class="text-sm sm:text-xl w-[100%] z-10 text-gray-900">
-                        <h1 class="text-align" id="hider">
+                        <h1 class="text-align text-orange-900" id="hider">
                             I am currently looking for internships on React
                             based or any frontend based.I can create the
                             basic to intermediate level websites. I am also
@@ -437,7 +448,7 @@
                 </div>
                 <!-- rightpart  -->
 
-                <div class="user-image rounded-3xl sm:py-15 p-10 flex justify-center items-center w-[70%] sm:w-[50%]">
+                <div class="user-image rounded-3xl sm:py-15 p-4 bg-transparent flex justify-center items-center w-[70%] sm:w-[50%]">
                     <img src="./images/userAsset/Pelli.jpeg" alt="" class="rounded-3xl w-[100%] sm:w-[80%]" />
                 </div>
             </div>
@@ -449,12 +460,39 @@
                 Projects
             </h2>
             <div class="w-[90vw] sm:w-[80vw] flex flex-col justify-center items-center gap-20 overflow-hidden">
+                <div class="project-card h-[350px] sm:h-[500px] w-[100%] md:w-[90%] relative group bg-center rounded-3xl pro_ani"
+                id="p1" style="background-image: url(./images/projects/image.png)">
+                <div
+                    class="absolute text-5xl xl:text-9xl md:text-8xl sm:text-6xl text-orange-600 z-10 right-[5%] top-[10%] opacity-0 group-hover:opacity-100 duration-700 transition-opacity">
+                    01
+                </div>
+                <div
+                    class="w-[80%] sm:w-[60%] absolute text-orange-400 left-[10%] top-[40%] opacity-0 transition-opacity duration-700 group-hover:opacity-100 z-10 flex flex-col gap-2 text-2xl xl:text-4xl md:text-4xl sm:text-3xl font-semibold">
+                    <div class="flex gap-[1%] w-fit">
+                        <img class="sm:w-[5%] w-[10%]" src="./images/stack/HTML.png" alt="" />
+                        <img class="sm:w-[5%] w-[10%]" src="./images/stack/CSS.png" alt="" />
+                        <img class="sm:w-[5%] w-[10%]" src="./images/stack/Javascript.svg" alt="" />
+                        <img class="sm:w-[5%] w-[10%]" src="./images/stack/Tailwind.png" alt="" />
+                    </div>
+                    <div class="flex flex-col">
+                        <h1>CEMS Academy</h1>
+
+                        <span class="text-orange-600 text-sm sm:text-base">A Real world LMS platform developed during my internship for CEMS Vizag.
+                        </span>
+                    </div>
+                    <div class="btn-grp flex">
+                        <a href="https://cemsacademy.org">
+                            <i title="GitHubLink" class="fa-brands fa-github icon"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
                 <!-- p1  -->
                 <div class="project-card h-[350px] sm:h-[500px] w-[100%] md:w-[90%] relative group bg-center rounded-3xl pro_ani"
                     id="p1" style="background-image: url(./images/projects/p1.png)">
                     <div
                         class="absolute text-5xl xl:text-9xl md:text-8xl sm:text-6xl text-orange-600 z-10 right-[5%] top-[10%] opacity-0 group-hover:opacity-100 duration-700 transition-opacity">
-                        01
+                        02
                     </div>
                     <div
                         class="w-[80%] sm:w-[60%] absolute text-orange-400 left-[10%] top-[40%] opacity-0 transition-opacity duration-700 group-hover:opacity-100 z-10 flex flex-col gap-2 text-2xl xl:text-4xl md:text-4xl sm:text-3xl font-semibold">
@@ -484,7 +522,7 @@
                     id="p2" style="background-image: url(./images/projects/p2.png)">
                     <div
                         class="absolute text-5xl xl:text-9xl md:text-8xl sm:text-6xl text-orange-600 z-10 left-[10%] top-[10%] opacity-0 group-hover:opacity-100 duration-700 transition-opacity">
-                        02
+                        03
                     </div>
                     <div
                         class="w-[80%] sm:w-[50%] absolute text-orange-400 right-[5%] top-[40%] opacity-0 transition-opacity duration-700 group-hover:opacity-100 z-10 flex flex-col gap-2 text-2xl xl:text-4xl md:text-4xl sm:text-3xl font-semibold">
@@ -514,7 +552,7 @@
                     id="p3" style="background-image: url(./images/projects/p3.png)">
                     <div
                         class="absolute text-5xl xl:text-9xl md:text-8xl sm:text-6xl text-orange-600 z-10 right-[5%] top-[10%] opacity-0 group-hover:opacity-100 duration-700 transition-opacity">
-                        03
+                        04
                     </div>
                     <div
                         class="w-[80%] sm:w-[60%] absolute text-orange-400 left-[10%] top-[40%] opacity-0 transition-opacity duration-700 group-hover:opacity-100 z-10 flex flex-col gap-2 text-2xl xl:text-4xl md:text-4xl sm:text-3xl font-semibold">
@@ -548,7 +586,7 @@
                     id="p4" style="background-image: url(./images/projects/p4.png)">
                     <div
                         class="absolute text-5xl xl:text-9xl md:text-8xl sm:text-6xl text-orange-600 z-10 left-[10%] top-[10%] opacity-0 group-hover:opacity-100 duration-700 transition-opacity">
-                        04
+                        05
                     </div>
                     <div
                         class="w-[80%] sm:w-[50%] absolute text-orange-400 right-[5%] top-[30%] sm:top-[40%] opacity-0 transition-opacity duration-700 group-hover:opacity-100 z-10 flex flex-col gap-2 text-2xl xl:text-4xl md:text-4xl sm:text-3xl font-semibold">
@@ -574,6 +612,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- p5  -->
             </div>
         </div>
         <!-- skills  -->
@@ -587,14 +626,14 @@
                 <div
                     class="grid grid-cols-3 overflow-hidden w-[90vw] sm:w-[70vw] justify-items-center items-center gap-20 h-auto skillimg">
                     <img src="assets/c-.png" alt="" id="c" />
-                    <img src="assets/python.png" alt="" id="py" />
-                    <img src="assets/java.png" alt="" id="java" />
+                    <img src="assets/linux.png" alt="" id="py" />
+                    <img src="assets/web.png" alt="" id="java" />
                     <img src="assets/1174949_js_react js_logo_react_react native_icon.png" alt="" id="react" />
                     <img src="assets/html-5.png" alt="" id="html" />
                     <img src="assets/Css.png" alt="" id="css" />
                     <img src="assets/Tail-removebg-preview.png" alt="" id="tail" />
                     <img src="assets/js.png" alt="" id="js" />
-                    <img src="assets/Typescript.svg" alt="" id="ts" />
+                    <img src="assets/moodle.svg" alt="" id="ts" />
                     <img src="assets/Git.svg" alt="" id="git" />
                     <img src="assets/Github.svg" alt="" id="github" class="bg-white rounded-full p-1" />
                     <img src="assets/Gsap.png" alt="" id="gsap" />
@@ -628,7 +667,7 @@
             </div>
             <div class="group flex flex-col gap-10 justify-center items-center w-[100%] md:w-[40%] z-[11]"
                 id="last_nav">
-                <a href="assets/Likhit's Resume.pdf"
+                <a href="assets/Resume.pdf"
                     class="btn-pink border border-white bg-orange-600 hover:scale-110 transition-all duration-200 w-[80%] flex justify-center items-center p-3 rounded-lg"
                     download>
                     <button class="text-xl sm:text-2xl">Resume</button>
