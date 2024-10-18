@@ -167,7 +167,7 @@ document.querySelector("#github").addEventListener("mouseleave", () => {
 });
 //ts
 document.querySelector("#ts").addEventListener("mouseover", () => {
-    cursor.innerHTML = "TypeScript";
+    cursor.innerHTML = "Moodle";
 
     skillval.textContent = 0;
     percentage = setInterval(ts, 30);
@@ -232,7 +232,7 @@ document.querySelector("#c").addEventListener("mouseleave", () => {
 });
 //python
 document.querySelector("#py").addEventListener("mouseover", () => {
-    cursor.innerHTML = "PYTHON";
+    cursor.innerHTML = "Linux";
 
     skillval.textContent = 0;
     percentage = setInterval(py, 30);
@@ -253,7 +253,7 @@ document.querySelector("#html").addEventListener("mouseleave", () => {
 });
 //java
 document.querySelector("#java").addEventListener("mouseover", () => {
-    cursor.innerHTML = "JAVA";
+    cursor.innerHTML = "AWS";
     skillval.textContent = 0;
     percentage = setInterval(java, 30);
 });
