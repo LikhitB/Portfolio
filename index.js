@@ -515,9 +515,9 @@ var names = document.querySelector("#name");
 var email = document.querySelector("#email");
 var contact = document.querySelector("#contacts");
 var textbox = document.querySelector("#suggest");
-if (names.value==="" && email.value==="" && contact.value==="" && textbox.value==="") {alert('Check ,Something went wrong !')}
-else{
 form.addEventListener("submit", (e) => {
+    if (names.value==="" && email.value==="" && contact.value==="" && textbox.value==="") {alert('Check ,Something went wrong !')}
+    else{
     e.preventDefault();
     fetch(form.action, {
         method: "POST",
@@ -534,7 +534,8 @@ form.addEventListener("submit", (e) => {
                 contact.value = "";
             }, 100);
         });
-});}
+    }
+});
     
 
 
