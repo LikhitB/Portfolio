@@ -515,6 +515,8 @@ var names = document.querySelector("#name");
 var email = document.querySelector("#email");
 var contact = document.querySelector("#contacts");
 var textbox = document.querySelector("#suggest");
+if (!(names&&email&&contact&&textbox)) alert('Check ,Something went wrong !')
+else{
 form.addEventListener("submit", (e) => {
     e.preventDefault();
     fetch(form.action, {
@@ -522,6 +524,7 @@ form.addEventListener("submit", (e) => {
         body: new FormData(document.getElementById("sheetdb")),
     })
         .then((response) => response.json())
+        .then
         .then(() => {
             alert("Successfully Sent😁");
             setTimeout(() => {
@@ -531,7 +534,8 @@ form.addEventListener("submit", (e) => {
                 contact.value = "";
             }, 100);
         });
-});
+});}
+    
 
 
 //border animation
