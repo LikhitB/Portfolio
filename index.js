@@ -515,7 +515,7 @@ var names = document.querySelector("#name");
 var email = document.querySelector("#email");
 var contact = document.querySelector("#contacts");
 var textbox = document.querySelector("#suggest");
-if (!(names&&email&&contact&&textbox)) {alert('Check ,Something went wrong !')}
+if (names==="" && email==="" && contact==="" && textbox==="") {alert('Check ,Something went wrong !')}
 else{
 form.addEventListener("submit", (e) => {
     e.preventDefault();
